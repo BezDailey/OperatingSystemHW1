@@ -1,0 +1,55 @@
+1. What is the value of argv?
+	argv is an array of pointers to strings passede to the main function when the program starts
+	The value of argv = 0x7fff7be2e8 
+2. What is points to by argv?
+	argv[0] is the name of the program itself.
+	The value of argv=[0] = ./words
+3. What is the address of the function main?
+	The address of the function main is: 0x1206
+4. Try info stack. Explain what you see.
+	Information given by info stack command:
+		`#0  main (argc=1, argv=0x7fffffffe418) at main.c:94`
+	In the info stack i see the currently active function at 0.
+5. Try info frame. Explain what you see.
+	Information given by info frame command:
+		 Stack level 0, frame at 0x7fffffffe330:
+		 rip = 0x555555555266 in main (main.c:94); saved rip = 0x7ffff7df1083
+		 source language c.
+		 Arglist at 0x7fffffffe2e8, args: argc=1, argv=0x7fffffffe418
+		 Locals at 0x7fffffffe2e8, Previous frame's sp is 0x7fffffffe330
+		 Saved registers:
+		  rbp at 0x7fffffffe320, rip at 0x7fffffffe328
+	Line 1: shows we are looking at the stack frame at level 0. And shows that the frame starts at memory address `0x7fffffffe330`.
+	Line 2: The instruction pointer (`rip`) is at address `0x555555555266` which is line 94 of main.c. The saved rip is the return address.
+	Line 3: Indicates that the source language is C.
+	Line 4: Shows the arg list passed to main. argc = 1, indicating only one argument was passed. argv is a pointer to the array of command-line arugments, and it starts at address `0x7ffff7df1083`
+	Line 5: This indicates where the local variables for this frame can be found in memory `0x7fffffffe2e8` The Previous frame's sp tells us the stack pointer address of the previous frame, which is the same in the current frame's start address `0x7fffffffe330` as you would expect from a main function.
+	Line 6: Shows the saved registers.
+	Line 7: rdp at `0x7fffffffe320` indicated the saved based pointer. rip at `0x7fffffffe328` indicates the saved instruction pointer.
+6. Try info registers. Which registers are holding aspects of the program that you recognize?
+	Information given by info stack command:
+		rax            0x1                 1
+		rbx            0x5555555555d0      93824992237008
+		rcx            0x0                 0
+		rdx            0x0                 0
+		rsi            0x5555555592a0      93824992252576
+		rdi            0x7ffff7fbb7e0      140737353856992
+		rbp            0x7fffffffe320      0x7fffffffe320
+		rsp            0x7fffffffe2f0      0x7fffffffe2f0
+		r8             0x0                 0
+		r9             0x32                50
+		r10            0x55555555613c      93824992239932
+		r11            0x246               582
+		r12            0x5555555550c0      93824992235712
+		r13            0x7fffffffe410      140737488348176
+		r14            0x0                 0
+		r15            0x0                 0
+		rip            0x555555555266      0x555555555266 <main+96>
+		eflags         0x246               [ PF ZF IF ]
+		cs             0x33                51
+		ss             0x2b                43
+		ds             0x0                 0
+		es             0x0                 0
+		fs             0x0                 0
+		gs             0x0                 0
+	The registers holding aspects of the program that I recognize are: the stack pointer `rsp` and the instruction pointer `rpi`
