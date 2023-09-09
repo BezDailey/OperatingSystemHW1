@@ -42,9 +42,3 @@ This assignment serves as an introduction to a range of tools essential for subm
 
 Several questions are provided for each section. Answers should be documented in text files (`gdb.txt`, `objdump.txt`, `map.txt`).
 
----
-
-The assignment aims to give students hands-on experience with tools and concepts that will be important throughout the semester. Students are also encouraged to consult provided resources for each tool and seek help from TAs as needed.S
-
-
-
