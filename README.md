@@ -11,7 +11,7 @@ This assignment serves as an introduction to a range of tools essential for subm
 - **Your First Assignment**: Programming tasks related to `make`, `wc`, executables, and memory addresses.
 - **Bonus Tasks**: Advanced programming with `wc` and `map`.
   
-## etup
+## Setup
 
 - Create a Google account with your `@morehouse.edu` email.
 - Register for the Google Cloud Platform Education Grant for Students.
