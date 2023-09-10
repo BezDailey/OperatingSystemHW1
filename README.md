@@ -1,4 +1,4 @@
-# Assignment Summary for Operatinf Systems Homework 1
+# Assignment Summary for Operating Systems Homework 1
 
 ## Introduction
 
